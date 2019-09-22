@@ -92,6 +92,11 @@ func (r *GithubRepository) Changelog(head string, base string) (*operator.Change
 		Head: head,
 	}
 
+	// Release base version
+	if base == "" {
+		return changelog, nil
+	}
+
 	diff, _, err := r.GithubClient.Repositories.CompareCommits(context.Background(), r.Owner, r.Repository, base, head)
 
 	if err != nil {
