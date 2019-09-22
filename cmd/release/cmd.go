@@ -58,6 +58,8 @@ func gitlabCommand() *cobra.Command {
 				return
 			}
 			exitIfError(operator.Release(head, base))
+
+			fmt.Printf("A release was submitted!!!\n")
 		},
 		PreRun: func(cmd *cobra.Command, args []string) {
 			if len(args) != 1 {
