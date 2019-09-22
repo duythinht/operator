@@ -16,7 +16,7 @@ func init() {
 	Command = &cobra.Command{
 		Use: "release",
 	}
-	Command.AddCommand(gitlabCommand())
+	Command.AddCommand(gitlabCommand(), githubCommand())
 	Command.PersistentFlags().StringVarP(&rev, "rev", "r", "", "Revision to compare log")
 	Command.PersistentFlags().StringVarP(&addr, "addr", "a", "https://git.5kbps.io", "Server address")
 	Command.PersistentFlags().StringVarP(&token, "token", "t", "", "Personal Access Token")
