@@ -1,7 +1,7 @@
 ### Basic usage
 
 ```
-you[at]ci-runner$ operator release gitlab workloads/develop -a git.5kbps.io -t [your_pat_token]
+you[at]ci-runner$ operator release gitlab workloads/develop -a https://git.5kbps.io -t [your_pat_token]
 ## Changelog(time="2019-09-23 17:37", ancestor="1.0.0")
 
 * Changed:
