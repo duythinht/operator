@@ -88,6 +88,10 @@ func (r *GitlabRepository) Changelog(head string, base string) (*operator.Change
 		Head: head,
 	}
 
+	if base == "" {
+		return changelog, nil
+	}
+
 	diff, _, err := r.GitlabClient.Repositories.Compare(r.PID, &gitlab.CompareOptions{
 		From: &base,
 		To:   &head,
